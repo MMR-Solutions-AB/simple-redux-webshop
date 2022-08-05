@@ -1,16 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
 import Layout from "./components/Layout";
 import ProductPage from "./pages/ProductPage";
-import Routes from "./routes/Routes";
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <Layout>
-        <Routes/>
+        <ProductPage />
       </Layout>
-    </div>
+    </React.Fragment>
   );
 }
 

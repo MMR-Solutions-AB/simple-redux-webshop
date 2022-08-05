@@ -11,7 +11,7 @@ import React from "react";
 const ProductCard = ({ data }) => {
   const { title, description, img, price } = data;
   return (
-    <Card sx={{ maxWidth: 245 }}>
+    <Card sx={{ maxWidth: 245, height: "550px" }}>
       <CardMedia
         style={{ paddingTop: "20px" }}
         component="img"
@@ -19,15 +19,17 @@ const ProductCard = ({ data }) => {
         height="255"
         image={img}
       />
-      <Typography padding={2} variant="h5">
-        {title}
-      </Typography>
-      <Typography padding={2} fontSize="15px">
-        {description}
-      </Typography>
+      <Box height={190}>
+        <Typography padding={2} variant="h5">
+          {title}
+        </Typography>
+        <Typography padding={2} fontSize="15px">
+          {description}
+        </Typography>
+      </Box>
       <Divider style={{ margin: "10px" }} />
       <Box padding={"10px"} display={"flex"} justifyContent={"center"}>
-        <Button variant="contained">Köp</Button>
+        <Button variant="contained">Lägg till {`${price}:-`}</Button>
       </Box>
     </Card>
   );

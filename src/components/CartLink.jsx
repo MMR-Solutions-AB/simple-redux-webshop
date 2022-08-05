@@ -1,6 +1,6 @@
-import { IconButton } from "@mui/material";
+import { Badge, IconButton } from "@mui/material";
 import React from "react";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const CartLink = () => {
   return (
     <div>
@@ -11,7 +11,9 @@ const CartLink = () => {
         aria-label="menu"
         sx={{ mr: 2 }}
       >
-        <ShoppingCartIcon/>
+        <Badge badgeContent={4} color="secondary">
+          <ShoppingCartIcon />
+        </Badge>
       </IconButton>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from "./Navbar";
-
+import Box from "@mui/material/Box";
+import { AppBar, Toolbar } from "@mui/material";
+import CartLink from "./CartLink";
 /* 
 ----------------------------------------------------------------------------------------------------------------
 
@@ -11,14 +12,19 @@ våra routes ska visas.
 ----------------------------------------------------------------------------------------------------------------
 */
 
-
 const Layout = (props) => {
   return (
     <div>
       <header>
-        <Navbar/>
+        <Box>
+          <AppBar position="static">
+            <Toolbar>
+              <CartLink />
+            </Toolbar>
+          </AppBar>
+        </Box>
       </header>
-      <main>{props.children}</main>
+      <main style={{minHeight: '100vh'}}>{props.children}</main>
       <footer>{/* Footer content */}</footer>
     </div>
   );

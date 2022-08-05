@@ -1,6 +1,7 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Divider, Grid, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import CartItem from "../components/CartItem";
 import ProductCard from "../components/ProductCard";
 
 const productList = [
@@ -39,6 +40,11 @@ const ProductPage = () => {
           );
         })}
       </Grid>
+      <Stack border={"1px solid pink"} marginTop={5} spacing={2}>
+        {productList.map((product, index) => {
+          return <CartItem key={index} data={product} />;
+        })}
+      </Stack>
     </Container>
   );
 };
