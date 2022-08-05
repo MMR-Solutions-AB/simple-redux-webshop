@@ -4,7 +4,6 @@ import React from "react";
 const CartItem = () => {
   return (
     <Box
-      maxWidth={700}
       display={"flex"}
       justifyContent="space-around"
       padding={2}
