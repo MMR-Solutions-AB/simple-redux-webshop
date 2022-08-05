@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 /* 
 ----------------------------------------------------------------------------------------------------------------
@@ -14,8 +15,10 @@ våra routes ska visas.
 const Layout = (props) => {
   return (
     <div>
-      <header>{/* Navbar content */}</header>
-      <main>{props.main}</main>
+      <header>
+        <Navbar/>
+      </header>
+      <main>{props.children}</main>
       <footer>{/* Footer content */}</footer>
     </div>
   );
