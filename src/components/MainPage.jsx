@@ -1,9 +1,8 @@
-import { Container, Divider, Grid, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, Divider, Grid } from "@mui/material";
 import React from "react";
 import CartItem from "../components/CartItem";
 import ProductCard from "../components/ProductCard";
-
+import Checkout from "../components/Checkout";
 const productList = [
   {
     title: "Iphone 13",
@@ -52,32 +51,43 @@ const cartList = [
   },
 ];
 
-const ProductPage = () => {
+const MainPage = () => {
   return (
-    <Container style={{ marginTop: "1rem" }}>
+    <div>
+      {/* --------- Products --------- */}
       <Divider style={{ margin: "5rem" }} />
-      {/* -------------- Produkt listan -------------- */}
-      <Grid container spacing={2} justifyContent="center">
-        {productList.map((product, index) => {
-          return (
-            <Grid key={index} item>
-              <ProductCard data={product} />
-            </Grid>
-          );
-        })}
-      </Grid>
-      <Divider style={{ margin: "5rem" }} />
-      {/* -------------- Varukorg listan -------------- */}
-      <Box display="flex" justifyContent="center">
-        <Stack spacing={2}>
-          {cartList.map((product, index) => {
-            return <CartItem key={index} data={product} />;
+      <Box>
+        <Grid container spacing={5} justifyContent="center">
+          {productList.map((product, index) => {
+            return (
+              <Grid key={index} item>
+                <ProductCard data={product} />
+              </Grid>
+            );
           })}
-        </Stack>
+        </Grid>
       </Box>
       <Divider style={{ margin: "5rem" }} />
-    </Container>
+      {/* --------- Cart --------- */}
+      <Box display="flex" justifyContent="center">
+        <Grid maxWidth={800} container justifyContent="center">
+          {cartList.map((item, index) => {
+            return (
+              <Grid xs key={index} item>
+                <CartItem data={item} />
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Box>
+      <Divider style={{ margin: "5rem" }} />
+      {/* --------- Checkout --------- */}
+      <Box>
+        <Checkout summery={null} />
+      </Box>
+      <Divider style={{ margin: "5rem" }} />
+    </div>
   );
 };
 
-export default ProductPage;
+export default MainPage;

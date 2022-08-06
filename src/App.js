@@ -1,14 +1,13 @@
-import React from "react";
 import Layout from "./components/Layout";
-import ProductPage from "./pages/ProductPage";
+import MainPage from "./components/MainPage"
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <Layout>
-        <ProductPage />
+        <MainPage />
       </Layout>
-    </React.Fragment>
+    </>
   );
 }
 

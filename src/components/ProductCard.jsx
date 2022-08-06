@@ -15,7 +15,6 @@ const ProductCard = ({ data }) => {
       <CardMedia
         style={{ paddingTop: "20px" }}
         component="img"
-        alt="green iguana"
         height="255"
         image={img}
       />

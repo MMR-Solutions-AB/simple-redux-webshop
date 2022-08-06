@@ -1,6 +1,6 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { AppBar, Toolbar } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import CartLink from "./CartLink";
 /* 
 ----------------------------------------------------------------------------------------------------------------
@@ -24,8 +24,20 @@ const Layout = (props) => {
           </AppBar>
         </Box>
       </header>
-      <main style={{minHeight: '100vh'}}>{props.children}</main>
-      <footer>{/* Footer content */}</footer>
+      <main style={{ minHeight: "100vh" }}>{props.children}</main>
+      <footer>
+        <Box
+          height={150}
+          bgcolor="#1769aa"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Typography variant="h5" color="#FFFFFF">
+            TechOver For Life
+          </Typography>
+        </Box>
+      </footer>
     </div>
   );
 };

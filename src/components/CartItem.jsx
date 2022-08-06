@@ -1,12 +1,15 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import React from "react";
 
-const CartItem = () => {
+const CartItem = ({ data }) => {
+  const { title, price } = data;
+
   return (
     <Box
       display={"flex"}
       justifyContent="space-around"
       padding={2}
+      margin={2}
       style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }}
     >
       <Box
@@ -15,11 +18,10 @@ const CartItem = () => {
         alignItems="center"
         width={200}
       >
-        <Typography>Iphone 11</Typography>
+        <Typography>{title}</Typography>
         <Divider orientation="vertical" />
-        <Typography>8995:-</Typography>
+        <Typography>{price}</Typography>
       </Box>
-
       <Box
         display={"flex"}
         justifyContent="space-between"
