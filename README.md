@@ -12,4 +12,4 @@ Det ska visa antalt artiklar och uppdateras vid varje nyinlagd produkt i varukor
 
 2. Skapa funktionalitet för att möjligöra addering och subtrahering av redan inlagd produkt i varukorgen. Det innebär att knapparna i CartItem komponenten ska förändra antal artiklar i given produkt. 
 
-3. Skapa en funktion som summerar priset på alla produkter i varukorg, denna funktionalitet innebär att priset updateras varje gång en produkt läggs till. Det ska även finnas ett onClick event där total priset visas i en alert ruta när man klickar på Checkout knappen. Total priset ska beräknas med skatt på 25% moms och frakt på 55kr.  
+3. Skapa en funktion som summerar priset på alla produkter i varukorg, denna funktionalitet innebär att priset updateras varje gång en produkt läggs till. Det ska även finnas ett onClick event där total priset visas i en alert ruta när man klickar på Checkout knappen. 

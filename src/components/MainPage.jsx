@@ -16,7 +16,6 @@ import { useCallback } from "react";
 const MainPage = () => {
   /* useDispatch to dispatch actions decleard in slice */
   const dispatch = useDispatch();
-
   /* useSelector to get state from store */
   const products = useSelector(productList);
   const cartItems = useSelector(cartList);
@@ -26,22 +25,26 @@ const MainPage = () => {
     dispatch(addCartItem(product));
   }
 
-  function getIt(item) {
-    dispatch(addAmount(item));
+  /* Option bestämmer vilket dispatchfunktion som ska köras. Option är ett boolean, addering = True, Subtrahering = False */
+  function addOrSub(option, product) {
+    option ? dispatch(addAmount(product)) : dispatch(subtractAmount(product));
   }
 
   /* ------- En mer avancerad version av hur man bygger react applikationer. ------- */
 
-  /*   const subOrAdd = useCallback((option, product) => {
-    option ? dispatch(addAmount(product)) : dispatch(subtractAmount(product));
-  }, []); */
+  /*   
 
-  /*   const addProductToCart = useCallback(
+    const addOrSub = useCallback((option, product) => {
+      option ? dispatch(addAmount(product)) : dispatch(subtractAmount(product));
+    }, [dispatch]); 
+
+    const addProductToCart = useCallback(
     (product) => {
       dispatch(addCartItem(product));
     },
     [products]
   );
+
  */
   return (
     <div>
@@ -65,7 +68,7 @@ const MainPage = () => {
           {cartItems.map((item, index) => {
             return (
               <Grid xs key={index} item>
-                <CartItem data={item} functionosadd={getIt} />
+                <CartItem data={item} addOrSubItem={addOrSub} />
               </Grid>
             );
           })}

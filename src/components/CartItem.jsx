@@ -1,8 +1,8 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import React from "react";
 
-const CartItem = ({ data, functionosadd }) => {
-  const { title, price } = data;
+const CartItem = ({ data, addOrSubItem }) => {
+  const { title, price, amount } = data;
 
   return (
     <Box
@@ -20,7 +20,7 @@ const CartItem = ({ data, functionosadd }) => {
       >
         <Typography>{title}</Typography>
         <Divider orientation="vertical" />
-        <Typography>{price}</Typography>
+        <Typography>{price * amount}:-</Typography>
       </Box>
       <Box
         display={"flex"}
@@ -30,17 +30,17 @@ const CartItem = ({ data, functionosadd }) => {
       >
         <Button
           onClick={() => {
-            functionosadd(false, data);
+            addOrSubItem(false, data);
           }}
           variant="contained"
           size="small"
         >
           -
         </Button>
-        <Typography>8</Typography>
+        <Typography>{amount}</Typography>
         <Button
           onClick={() => {
-            functionosadd(data);
+            addOrSubItem(true, data);
           }}
           variant="contained"
           size="small"
