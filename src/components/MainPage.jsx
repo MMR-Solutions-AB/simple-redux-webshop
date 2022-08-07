@@ -1,8 +1,8 @@
 import { Box, Divider, Grid } from "@mui/material";
 import React from "react";
-import CartItem from "../components/CartItem";
-import ProductCard from "../components/ProductCard";
-import Checkout from "../components/Checkout";
+import CartItem from "./CartItem";
+import ProductCard from "./ProductCard";
+import Checkout from "./Checkout";
 const productList = [
   {
     title: "Iphone 13",
