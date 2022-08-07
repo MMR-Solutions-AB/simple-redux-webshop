@@ -14,9 +14,9 @@ const shopSlice = createSlice({
   reducers: {
     addCartItem: (state, action) => {
       /* Hur vi ändrar state i React & Context API, Vi byter ut det gamla mot ett nytt och uppdaterat state */
-      state.cart = [...state.cart, { ...action.payload }];
+      state.cart = [...state.cart, { ...action.payload, amount: 1 }];
       /* Redux tillåter Mutation i sin reducer, tillskillnad från React useState */
-      /* state.cart.push(action.payload); */
+      /* state.cart.push({ ...action.payload, amount: 1 }); */
     },
   },
 });

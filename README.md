@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+# Redux Projekt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Ett Simpelt Redux Projekt
+Projektet innefattar en simpel layout design likt en webshop, syftet med denna design är att kunna applicera funktionalitet genom Redux biblotektet. 
 
-## Available Scripts
+Projektet har en simpel Redux setup, vilket görs under föreläsning. Om man inte har klonat ner designLayout branch och implementerat Redux setup själv, klonas branch "redux-setup". "redux-setup" är vår utgångspunkt för uppgiften.
 
-In the project directory, you can run:
+### Uppgiften
 
-### `npm start`
+1. Skapa funktionalitet för CartLink komponent att visa antalt artiklar i varukorg i Material UI komponenten "badge", 
+Det ska visa antalt artiklar och uppdateras vid varje nyinlagd produkt i varukorg.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Skapa funktionalitet för att möjligöra addering och subtrahering av redan inlagd produkt i varukorgen. Det innebär att knapparna i CartItem komponenten ska förändra antal artiklar i given produkt. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Skapa en funktion som summerar priset på alla produkter i varukorg, denna funktionalitet innebär att priset updateras varje gång en produkt läggs till. Det ska även finnas ett onClick event där total priset visas i en alert ruta när man klickar på Checkout knappen. Total priset ska beräknas med skatt på 25% moms och frakt på 55kr.  
