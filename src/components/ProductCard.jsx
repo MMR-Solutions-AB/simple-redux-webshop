@@ -8,8 +8,11 @@ import {
 } from "@mui/material";
 import React from "react";
 
-const ProductCard = ({ data }) => {
+const ProductCard = ({ data, addProduct }) => {
   const { title, description, img, price } = data;
+
+  console.log("ProductCard Renderas");
+
   return (
     <Card sx={{ maxWidth: 245, height: "550px" }}>
       <CardMedia
@@ -28,10 +31,12 @@ const ProductCard = ({ data }) => {
       </Box>
       <Divider style={{ margin: "10px" }} />
       <Box padding={"10px"} display={"flex"} justifyContent={"center"}>
-        <Button variant="contained">Lägg till {`${price}:-`}</Button>
+        <Button onClick={() => addProduct(data)} variant="contained">
+          Lägg till {`${price}:-`}
+        </Button>
       </Box>
     </Card>
   );
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);
