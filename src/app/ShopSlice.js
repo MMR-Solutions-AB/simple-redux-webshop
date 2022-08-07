@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { allProducts } from "./constants";
+
+/* Vårt state */
 const initialState = {
   products: allProducts,
   cart: [],
@@ -19,9 +21,11 @@ const shopSlice = createSlice({
   },
 });
 
+/* Exportera state, ett av fler alternativ för att ta del av state runt om i din applikation. */
 export const productList = (state) => state.products;
 export const cartList = (state) => state.cart;
 
+/* Actions i reducern */
 export const { addCartItem } = shopSlice.actions;
 
 /* Reducer to store */
