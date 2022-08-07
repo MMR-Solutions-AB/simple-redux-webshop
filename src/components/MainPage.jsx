@@ -4,7 +4,13 @@ import CartItem from "./CartItem";
 import ProductCard from "./ProductCard";
 import Checkout from "./Checkout";
 import { useDispatch, useSelector } from "react-redux";
-import { productList, cartList, addCartItem } from "../app/ShopSlice";
+import {
+  productList,
+  cartList,
+  addCartItem,
+  addAmount,
+  subtractAmount,
+} from "../app/ShopSlice";
 import { useCallback } from "react";
 
 const MainPage = () => {
@@ -20,7 +26,15 @@ const MainPage = () => {
     dispatch(addCartItem(product));
   }
 
+  function getIt(item) {
+    dispatch(addAmount(item));
+  }
+
   /* ------- En mer avancerad version av hur man bygger react applikationer. ------- */
+
+  /*   const subOrAdd = useCallback((option, product) => {
+    option ? dispatch(addAmount(product)) : dispatch(subtractAmount(product));
+  }, []); */
 
   /*   const addProductToCart = useCallback(
     (product) => {
@@ -51,7 +65,7 @@ const MainPage = () => {
           {cartItems.map((item, index) => {
             return (
               <Grid xs key={index} item>
-                <CartItem data={item} />
+                <CartItem data={item} functionosadd={getIt} />
               </Grid>
             );
           })}

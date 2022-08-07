@@ -1,7 +1,7 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
 import React from "react";
 
-const CartItem = ({ data }) => {
+const CartItem = ({ data, functionosadd }) => {
   const { title, price } = data;
 
   return (
@@ -28,11 +28,23 @@ const CartItem = ({ data }) => {
         padding="10px"
         width={200}
       >
-        <Button variant="contained" size="small">
+        <Button
+          onClick={() => {
+            functionosadd(false, data);
+          }}
+          variant="contained"
+          size="small"
+        >
           -
         </Button>
         <Typography>8</Typography>
-        <Button variant="contained" size="small">
+        <Button
+          onClick={() => {
+            functionosadd(data);
+          }}
+          variant="contained"
+          size="small"
+        >
           +
         </Button>
       </Box>

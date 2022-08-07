@@ -11,8 +11,6 @@ import React from "react";
 const ProductCard = ({ data, addProduct }) => {
   const { title, description, img, price } = data;
 
-  console.log("ProductCard Renderas");
-
   return (
     <Card sx={{ maxWidth: 245, height: "550px" }}>
       <CardMedia
@@ -39,4 +37,8 @@ const ProductCard = ({ data, addProduct }) => {
   );
 };
 
-export default React.memo(ProductCard);
+export default ProductCard;
+
+/* Tillhör den mer avancerade versionen hur man bygger React applikationer. Memoize components */
+/* export default React.memo(ProductCard);
+ */
